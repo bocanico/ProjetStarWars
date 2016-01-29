@@ -11,6 +11,10 @@
 <body>
 
 <header id="header" role="banner" class="line txtcenter">
+    <a class="fl inbl" href="{{url('/home')}}">
+        <img src="{{url('assets/img/Star_Wars_Logo.png')}}" alt="e-StarWars" />
+        <h1 class="visually-hidden">e-starwars</h1>
+    </a>
     <nav id="navigation" role="navigation">
         <ul class="pal">
             <li><a href="{{url('/home')}}">{{trans('app.backHome')}}</a></li>
@@ -29,5 +33,7 @@
 
 <footer id="footer" role="contentinfo" class="line pam txtcenter">
 </footer>
+<script src="{{url("assets/vendor/jquery-1.12.0.min.js")}}"></script>
+<script src="{{url("assets/js/main.js")}}"></script>
 </body>
 </html>

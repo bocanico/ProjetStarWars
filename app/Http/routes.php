@@ -43,10 +43,10 @@ Route::group(['middleware' => ['throttle:60, 1']], function(){
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/home/{byType?}',['as'=>'home', 'uses'=>'FrontController@index']); // creation alias home (ex usage: redirect()->home();
+    Route::get('/home/{byType?}/',['as'=>'home', 'uses'=>'FrontController@index']); // creation alias home (ex usage: redirect()->home();
     Route::get('/prod/{id}/{slug?}','FrontController@showProduct');
-    Route::get('/cat/{id}/{slug?}/{byType?}','FrontController@showProductByCategory');
-    Route::get('/tag/{id}/{name?}/{byType?}','FrontController@showProductByTag');
+    Route::get('/cat/{id}/{slug?}/{byType?}/','FrontController@showProductByCategory');
+    Route::get('/tag/{id}/{name?}/{byType?}/','FrontController@showProductByTag');
     Route::get('contact','FrontController@showContact');
     Route::post('storeContact','FrontController@storeContact');
     Route::post('/prod/{id}/{slug?}','FrontController@selectProduct');
@@ -54,8 +54,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('cart/add/{id}', 'FrontController@cartAddProduct');
     Route::get('cart/sub/{id}', 'FrontController@cartSubProduct');
     Route::post('prod/reset', 'FrontController@resetProduct');
-    Route::any('login','loginController@login');
-    Route::any('logout','loginController@logout');
+    Route::any('login','LoginController@login');
+    Route::any('logout','LoginController@logout');
 
     // middleware dans le middleware web, qui gère le nombre de connexions  par minutes (donc peu doublon avec xcsrf_token)
     Route::group(['middleware' => ['throttle:60, 1']], function(){

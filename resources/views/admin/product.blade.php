@@ -42,7 +42,7 @@
                     <form class="inbl" method="POST" action="{{url('product', $product->id)}}">
                         {!! csrf_field() !!}
                         <input type="hidden" name="_method" value="delete">
-                        <input id="delete" type="submit" value="delete">
+                        <input id="delete" type="submit" value="Delete">
                     </form>
                  @endif
             </div>

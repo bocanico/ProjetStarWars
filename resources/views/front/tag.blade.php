@@ -5,10 +5,10 @@
 @section('content')
     <div id="tri">
         <span>Trier par:</span>
-        <a href="{{ url('tag', [$tag->id, $tag->name, 'bydate']) }}">date</a>
-        <a href="{{ url('tag', [$tag->id, $tag->name, 'byname']) }}">nom</a>
-        <a href="{{ url('tag', [$tag->id, $tag->name, 'byprice']) }}">prix</a>
-        <a href="{{ url('tag', [$tag->id, $tag->name, 'byscore']) }}">popularité</a>
+        <a href="{{url('tag/'.$tag->id.'/'.$tag->name.'/bydate/?order='.$order)}}">date</a>
+        <a href="{{url('tag/'.$tag->id.'/'.$tag->name.'/byname/?order='.$order)}}">nom</a>
+        <a href="{{url('tag/'.$tag->id.'/'.$tag->name.'/byprice/?order='.$order)}}">prix</a>
+        <a href="{{url('tag/'.$tag->id.'/'.$tag->name.'/byscore/?order='.$order)}}">score</a>
         <span id="number_DB_products" class="fr">il y a {{$products->total()}} articles</span>
     </div>
 

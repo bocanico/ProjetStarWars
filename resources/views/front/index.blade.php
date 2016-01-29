@@ -6,10 +6,13 @@
     <div>
         <div id="tri">
             <span>Trier par:</span>
-            <a href="{{url('home', 'bydate')}}">date</a>
-            <a href="{{url('home', 'byname')}}">nom</a>
-            <a href="{{url('home', 'byprice')}}">prix</a>
-            <a href="{{url('home', 'byscore')}}">popularité</a>
+            <a href="{{url('home/bydate/?order='.$order)}}">date</a>
+            <a href="{{url('home/byname/?order='.$order)}}">nom</a>
+            <a href="{{url('home/byprice/?order='.$order)}}">prix</a>
+            <a href="{{url('home/byscore/?order='.$order)}}">popularité</a>
+            {{--<a href="{{url('home', ['byname', '?order=asc'])}}">nom</a>--}}
+            {{--<a href="{{url('home', ['byprice', '?order=asc'])}}">prix</a>--}}
+            {{--<a href="{{url('home', ['byscore', '?order=asc'])}}">popularité</a>--}}
             <span id="number_DB_products" class="fr">il y a {{$products->total()}} articles</span>
         </div>
     </div>

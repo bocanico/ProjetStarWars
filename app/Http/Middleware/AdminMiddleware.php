@@ -31,7 +31,10 @@ class AdminMiddleware
         }else if (Auth::user()->role == 'editor'){
             return $next($request);
         }
-        return redirect('/home')->with(['message' => trans('auth.notAuth')]);
+        return redirect('/home')->with([
+            'message' => 'you are logged in',
+            'alert' => 'done'
+        ]);
 
     }
 }

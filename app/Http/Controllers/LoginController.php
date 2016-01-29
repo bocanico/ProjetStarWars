@@ -51,17 +51,16 @@ class LoginController extends Controller
                 return redirect()->intended('product'); // redirection à la main vers notre page admin produit
             }else{
                 return back()->withInput($request->only('email', 'remember'))->with([
-                    'message' => trans('app.noAuth'), 'alert' => 'warning'
+                    'message' => trans('app.noAuth'),
+                    'alert' => 'fail'
                 ]);
             }
 
         }
         else
         {
-            return view('auth.login')->with([
-                'message' => 'you are logged-in',
-                'alert' => 'done'
-            ]);
+            return view('auth.login');
+
         }
     }
 

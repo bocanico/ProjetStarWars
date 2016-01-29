@@ -1,11 +1,10 @@
 $(document).ready(function(){
     var index = 0;
     var path = $(location).attr('pathname');
-    //if(path == '/') path = '';
 
     var number_DB_products = $('span#number_DB_products').text();
-
     var number_products = $('.product').length;
+
 
     $(window).scroll(function() {
 
@@ -21,8 +20,8 @@ $(document).ready(function(){
              //}
 
              number_products = $('.product').length;
-             alert(number_DB_products);
-             alert(number_products);
+             //alert(number_DB_products);
+             //alert(number_products);
 
              //alert($('.product').length);
              if(number_products == number_DB_products)
@@ -71,5 +70,32 @@ $(document).ready(function(){
                  });
              }
          }
+    });
+
+
+    //var url = $('a.test').attr('href');
+    $('#tri a').on('click', function(){
+        url = $(this).attr('href');
+        //alert(url);
+        //alert(url.indexOf('desc'));
+        if(url.indexOf('asc') > 0){
+            url = url.replace('asc', 'desc');
+            //alert(toto);
+            $(this).attr('href', url);
+            //alert(url);
+        }
+        else {
+            url = url.replace('desc', 'asc');
+            $(this).attr('href', url);
+            //alert(url);
+        }
+    });
+
+    $('input#delete').on('click', function(){
+        if (confirm("Vous désirez vraiment supprimer le produit?")) {
+        }
+        else {
+            return false;
+        }
     });
 });

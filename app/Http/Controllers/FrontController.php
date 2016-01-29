@@ -55,32 +55,39 @@ class FrontController extends Controller
         });
     }
 
-    public function index($byType = 'bydate')
+    public function index(Request $request, $byType = 'bydate')
     {
+        if($request->order)
+        {
+            $order = $request->order;
 
+        }else{
+            $order = 'desc';
+        }
+//        dd($order);
         if($byType == 'bydate')
         {
-            $products = Product::with('tags','category','picture')->online()->orderBy('published_at', 'DESC')->paginate(5);
+            $products = Product::with('tags','category','picture')->online()->orderBy('published_at', $order)->paginate(5);
 
-            return view('front.index', compact('products', 'number_DB_products'));
+            return view('front.index', compact('products', 'number_DB_products', 'order'));
         }
         else if($byType == 'byname')
         {
-            $products = Product::with('tags','category','picture')->online()->orderBy('name', 'ASC')->paginate(5);
+            $products = Product::with('tags','category','picture')->online()->orderBy('name', $order)->paginate(5);
 
-            return view('front.index', compact('products'));
+            return view('front.index', compact('products', 'order'));
         }
         else if($byType == 'byprice')
         {
-            $products = Product::with('tags','category','picture')->online()->orderBy('price', 'DESC')->paginate(5);
+            $products = Product::with('tags','category','picture')->online()->orderBy('price', $order)->paginate(5);
 
-            return view('front.index', compact('products'));
+            return view('front.index', compact('products', 'order'));
         }
         else if($byType == 'byscore')
         {
-            $products = Product::with('tags','category','picture')->online()->orderBy('score', 'DESC')->paginate(5);
+            $products = Product::with('tags','category','picture')->online()->orderBy('score', $order)->paginate(5);
 
-            return view('front.index', compact('products'));
+            return view('front.index', compact('products', 'order'));
         }
     }
 
@@ -92,29 +99,36 @@ class FrontController extends Controller
         $numberItems = $request->numberItems;
 //        return $url;
         $field = 'published_at';
-        $order = 'DESC';
+
+        if($request->order)
+        {
+            $order = $request->order;
+
+        }else{
+            $order = 'desc';
+        }
 
         if (strstr($url, 'home') !== false)
         {
             if($byType == 'bydate')
             {
                 $field = 'published_at';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == 'byname')
             {
                 $field = 'name';
-                $order = 'ASC';
+//                $order = 'ASC';
             }
             elseif($byType == 'byprice')
             {
                 $field = 'price';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == 'byscore')
             {
                 $field = 'score';
-                $order = 'DESC';
+//                $order = 'DESC';
             };
 
             $products = Product::with('tags','category','picture')
@@ -137,22 +151,22 @@ class FrontController extends Controller
             if($byType == 'bydate')
             {
                 $field = 'published_at';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == 'byname')
             {
                 $field = 'name';
-                $order = 'ASC';
+//                $order = 'ASC';
             }
             elseif($byType == 'byprice')
             {
                 $field = 'price';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == 'byscore')
             {
                 $field = 'score';
-                $order = 'DESC';
+//                $order = 'DESC';
             };
 
             preg_match('#cat/([0-9]+)#', $url, $matches);
@@ -175,22 +189,22 @@ class FrontController extends Controller
             if($byType == 'bydate')
             {
                 $field = 'published_at';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == '')
             {
                 $field = 'name';
-                $order = 'ASC';
+//                $order = 'ASC';
             }
             elseif($byType == 'byprice')
             {
                 $field = 'price';
-                $order = 'DESC';
+//                $order = 'DESC';
             }
             elseif($byType == 'byscore')
             {
                 $field = 'score';
-                $order = 'DESC';
+//                $order = 'DESC';
             };
 
             preg_match('#tag/([0-9]+)#', $url, $matches);
@@ -328,7 +342,7 @@ class FrontController extends Controller
             return back()->with([
                 'alert' => 'done',
                 'message' => 'Produits ajoutés au panier',
-            ]);;
+            ]);
         }
         else
         {
@@ -351,7 +365,10 @@ class FrontController extends Controller
             $product->save();
             $quantity = session('panier.'.$product_id) - 1;
             session(['panier.'.$product_id => $quantity]);
-            return back();
+            return back()->with([
+                'alert' => 'done',
+                'message' => 'Produits enlevé au panier',
+            ]);
         }
         else{
             return back()->with([
@@ -434,7 +451,10 @@ class FrontController extends Controller
         {
 //            dd('mauvaise route');
             $request->session()->flash('status', 'fail');
-            return back();
+            return back()->with([
+                'message' => 'We need some information',
+                'alert' => 'fail'
+            ]);
 //            dd('coucou'); // var_dump customisé + die
         }
     }
@@ -479,61 +499,77 @@ class FrontController extends Controller
         return back();
     }
 
-    public function showProductByCategory($category_id, $slug = '', $byType = 'bydate')
+    public function showProductByCategory(Request $request, $category_id, $slug = '', $byType = 'bydate')
     {
+        if($request->order)
+        {
+            $order = $request->order;
+
+        }else{
+            $order = 'desc';
+        }
+
         if($byType == 'bydate')
         {
             $category = Category::findOrFail($category_id);
-            $products = $category->products()->with('tags','category','picture')->online()->orderBy('published_at', 'DESC')->paginate(5);
-            return view('front.category', compact('products', 'category'));
+            $products = $category->products()->with('tags','category','picture')->online()->orderBy('published_at', $order)->paginate(5);
+            return view('front.category', compact('products', 'category', 'order'));
         }
         else if($byType == 'byname')
         {
             // Les deux methodes ci-dessous marchent
 //        $products = Product::with('tags','category','picture')->where('category_id','=',$category_id)->paginate(5);
             $category = Category::findOrFail($category_id);
-            $products = $category->products()->with('tags','category','picture')->online()->orderBy('name', 'ASC')->paginate(5);
-            return view('front.category', compact('products', 'category')); // compact: ['products' => $products]
+            $products = $category->products()->with('tags','category','picture')->online()->orderBy('name', $order)->paginate(5);
+            return view('front.category', compact('products', 'category', 'order')); // compact: ['products' => $products]
         }
         else if($byType == 'byprice')
         {
             $category = Category::findOrFail($category_id);
-            $products = $category->products()->with('tags','category','picture')->online()->orderBy('price', 'DESC')->paginate(5);
-            return view('front.category', compact('products', 'category'));
+            $products = $category->products()->with('tags','category','picture')->online()->orderBy('price', $order)->paginate(5);
+            return view('front.category', compact('products', 'category', 'order'));
         }
         else if($byType == 'byscore')
         {
             $category = Category::findOrFail($category_id);
-            $products = $category->products()->with('tags','category','picture')->online()->orderBy('score', 'DESC')->paginate(5);
-            return view('front.category', compact('products', 'category'));
+            $products = $category->products()->with('tags','category','picture')->online()->orderBy('score', $order)->paginate(5);
+            return view('front.category', compact('products', 'category', 'order'));
         }
     }
 
-    public function showProductByTag($tag_id, $name = '', $byType = 'bydate')
+    public function showProductByTag(Request $request, $tag_id, $name = '', $byType = 'bydate')
     {
+        if($request->order)
+        {
+            $order = $request->order;
+
+        }else{
+            $order = 'desc';
+        }
+
         if($byType == 'bydate')
         {
             $tag = Tag::find($tag_id);
-            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('published_at', 'DESC')->paginate(5);
-            return view('front.tag', compact('products', 'tag'));
+            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('published_at', $order)->paginate(5);
+            return view('front.tag', compact('products', 'tag', 'order'));
         }
         else if($byType == 'byname')
         {
             $tag = Tag::find($tag_id);
-            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('name', 'ASC')->paginate(5);
-            return view('front.tag', compact('products', 'tag'));
+            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('name', $order)->paginate(5);
+            return view('front.tag', compact('products', 'tag', 'order'));
         }
         else if($byType == 'byprice')
         {
             $tag = Tag::find($tag_id);
-            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('price', 'DESC')->paginate(5);
-            return view('front.tag', compact('products', 'tag'));
+            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('price', $order)->paginate(5);
+            return view('front.tag', compact('products', 'tag', 'order'));
         }
         else if($byType == 'byscore')
         {
             $tag = Tag::find($tag_id);
-            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('score', 'DESC')->paginate(5);
-            return view('front.tag', compact('products', 'tag'));
+            $products = $tag->products()->with('tags', 'category', 'picture')->online()->orderBy('score', $order)->paginate(5);
+            return view('front.tag', compact('products', 'tag', 'order'));
         }
 
     }

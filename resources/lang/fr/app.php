@@ -25,6 +25,7 @@ return [
     'history' => 'History',
     'logout' => 'logout',
     'login' => 'login',
-    'admin' => 'admin'
+    'admin' => 'admin',
+    'noAuth' => 'login ou mot de passe incorrect',
 
 ];

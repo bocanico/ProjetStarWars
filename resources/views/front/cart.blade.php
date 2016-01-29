@@ -45,20 +45,20 @@
             @endif
         </div>
         <div id="customer" @if(session('status') == 'fail')) class="" @else class="visually-hidden" @endif>
-                 <form method="POST" action="{{url('prod/finalize')}}">
-                 {!! csrf_field() !!}
-                     <div class="form-text">
-                         <label class="label" for="address">Address</label>
-                         <input class="input-text" id="address" name="address" type="text" value="{{old('address')}}">
-                         @if($errors->has('address'))<span class="error">{{$errors->first('address')}}</span>@endif
-                     </div>
-                     <div class="form-text">
-                         <label class="label" for="number_card">Number card</label>
-                         <input class="input-text" id="number_card" name="number_card" type="text" value="{{old('number_card')}}">
-                         @if($errors->has('number_card'))<span class="error">{{$errors->first('number_card')}}</span>@endif
-                     </div>
-                     <input type="submit" value="Envoyer">
-                 </form>
+             <form method="POST" action="{{url('prod/finalize')}}">
+             {!! csrf_field() !!}
+                 <div class="form-text">
+                     <label class="label" for="address">Address</label><br/>
+                     <input class="input-text" id="address" name="address" type="text" value="{{old('address')}}">
+                     @if($errors->has('address'))<span class="error">{{$errors->first('address')}}</span>@endif
+                 </div>
+                 <div class="form-text">
+                     <label class="label" for="number_card">Number card</label><br/>
+                     <input class="input-text" id="number_card" name="number_card" type="text" value="{{old('number_card')}}">
+                     @if($errors->has('number_card'))<span class="error">{{$errors->first('number_card')}}</span>@endif
+                 </div>
+                 <input type="submit" value="Envoyer">
+             </form>
         </div>
     @else
         <p>Sorry no command</p>

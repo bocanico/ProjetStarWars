@@ -10,6 +10,10 @@
 </head>
 <body>
 <header id="header" role="banner" class="line txtcenter">
+    <a class="fl" href="{{url('/home')}}">
+        <img src="{{url('assets/img/Star_Wars_Logo.png')}}" alt="e-StarWars" />
+        <h1 class="visually-hidden">e-starwars</h1>
+    </a>
     @include('partials.nav')
 </header>
 <div id="main" role="main" class="line pam">

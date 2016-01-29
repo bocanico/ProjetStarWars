@@ -67,6 +67,6 @@
                 <span>{{trans('app.category')}}</span>{{$product->category->title}}
             </p>
         </div>
-
+    </div>
 @stop
 

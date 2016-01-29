@@ -36,6 +36,6 @@
 @endforelse
 <div>
     <a id="infiniteLoader">
-        <img src="assets/img/infiniteLoader.gif" alt="AjaxLoader">
+        <img src="{{url('assets/img/infiniteLoader.gif')}}" alt="AjaxLoader">
     </a>
 </div>

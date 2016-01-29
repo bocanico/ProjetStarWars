@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::with('tags','category','picture')->orderBy('published_at')->paginate(5);
+        $products = Product::with('tags','category','picture')->orderBy('published_at')->paginate(4);
         return view('admin.product', compact('products'));
 //        var_dump('test');
     }
@@ -46,7 +46,7 @@ class ProductController extends Controller
     public function showHistory()
     {
 //        $histories = History::orderBy('command_at')->get();
-        $histories = History::with('customer','product')->orderBy('command_at')->paginate(9);
+        $histories = History::with('customer','product')->orderBy('command_at')->paginate(6);
 //        $user = $histories->user();
 //        $total = [];
 //        foreach ($histories as $history)
@@ -268,7 +268,10 @@ class ProductController extends Controller
 
             $product->delete(); // on cascade pour les tags N-N
 
-            return back();
+            return back()->with([
+            'message' => 'Produit retiré',
+            'alert' => 'done'
+            ]);
         }
         else return back()->with([
             'message' => 'You have no acces',
