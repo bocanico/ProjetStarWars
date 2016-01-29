@@ -1,0 +1,194 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "modules/mixin";
+
+@font-face {
+  font-family: 'starjedi';
+  src: url('../fonts/starjedi/Starjedi.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'nevis-Bold';
+  src: url('../fonts/nevis-Bold.eot?') format('eot'),
+  url('../fonts/fonts/nevis-Bold.woff') format('woff'),
+  url('../fonts/nevis-Bold.ttf')  format('truetype'),
+  url('../fonts/nevis-Bold.svg#nevis-Bold') format('svg');
+}
+
+body {
+  background: url('theme/background.jpg') no-repeat 0 0;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  font-family: 'nevis-Bold';
+}
+
+#main {
+  margin: 170px auto 90px;
+  width:  1200px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#main h2 {
+  font-family: 'starjedi';
+
+}
+
+#mainadmin {
+  margin: 170px auto 90px;
+  width:  1400px;
+  background-color: #fff;
+}
+
+.product {
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 15px;
+}
+
+#navigation {
+  width: 100%;
+  height: auto;
+//  background-color: #5b94ff;
+  position: fixed;
+  top: 0;
+}
+
+#header {
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  background: url('theme/headernb.jpg') no-repeat 0 0;
+  background-size: 100% auto;
+  background-position-y: -38px;
+}
+
+#footer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  //background-color: #5b94ff;
+  bottom: 0;
+  background: url('theme/footernb.jpg') no-repeat 0 0;
+  background-size: 100% auto;
+  background-position-y: -100px;
+  //background-attachment: fixed;
+}
+
+#contact {
+  color: #FFE81F;
+}
+
+#img_products {
+  width: auto;
+  height: 250px;
+}
+
+#img_product {
+  width: auto;
+  height: 350px;
+}
+
+#img_cart {
+  width: auto;
+  height: 180px;
+}
+
+#command {
+  background-color: #fff;
+  padding: 20px;
+}
+#command a {
+  padding-left: 20px;
+}
+
+.fail{
+  color: #f00;
+}
+
+.done{
+  color: #0f0;
+}
+
+li {
+  list-style-type: none;
+  //text-decoration: none;
+  display: inline-block;
+  margin:0 20px;
+  vertical-align: bottom;
+}
+
+
+#tri,
+#endpage {
+  background-color: #fff;
+  text-align: left;
+  padding: 20px;
+}
+
+#tri a {
+  padding: 10px 20px;
+}
+
+
+.pagination {
+  text-align: center;
+}
+
+.pagination li {
+  margin: 0 20px;
+}
+
+#price {
+  margin-top: 15px;
+}
+
+.admin_product {
+  margin: 20px 0;
+  border-top: 1px solid black;
+}
+
+.btn-opened {
+  background-color: #0f0;
+}
+
+.btn-closed {
+  background-color: #f00;
+}
+
+#panier_logo {
+  color: #e86f00;
+}
+
+#panier_count {
+  position: relative;
+  right: 9px;
+  top: -1px;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border-radius:50%;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #000;
+  color: #000;
+}
+
+#customer {
+  display: inline-block;
+  position: absolute;
+  color: #f00;
+  width: 200px;
+  height: 150px;
+  border: 3px solid black;
+  background-color: blue;
+  top: 10px;
+  left: 600px;
+}
+
+div.form-text {
+  padding: 15px 0 ;
+}
+
+#delete {
+  padding: 4px 4px;
+}
