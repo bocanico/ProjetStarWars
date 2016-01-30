@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 29 Janvier 2016 à 16:03
+-- Généré le :  Sam 30 Janvier 2016 à 15:43
 -- Version du serveur :  10.1.9-MariaDB
 -- Version de PHP :  5.6.15
 
@@ -64,10 +64,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `user_id`, `address`, `number_card`, `number_command`, `created_at`, `updated_at`) VALUES
-(1, 1, '106 Rice Key\nOnachester, NY 46998', '375071848451496', 1, '2016-01-25 15:55:36', '2016-01-25 15:55:36'),
+(1, 1, '106 Rice Key\nOnachester, NY 46998', '375071848451496', 6, '2016-01-30 13:04:10', '2016-01-30 13:04:10'),
 (2, 2, '8372 Franecki Junctions Apt. 495\nEast Earlineton, SD 20287', '5114098372690905', 9, '2016-01-25 15:52:51', '2016-01-25 15:52:51'),
 (3, 3, '65108 Marvin Island Apt. 716\nSouth Jennifer, KS 22687-7145', '5310539571424648', 5, '2016-01-26 15:14:57', '2016-01-26 15:14:57'),
-(4, 4, 'test adress', '123456789', 1, '2016-01-25 16:07:15', '2016-01-25 16:07:15');
+(4, 4, 'test adress', '123456789', 2, '2016-01-29 18:37:17', '2016-01-29 18:37:17');
 
 -- --------------------------------------------------------
 
@@ -92,24 +92,14 @@ CREATE TABLE `histories` (
 --
 
 INSERT INTO `histories` (`id`, `product_id`, `customer_id`, `price`, `quantity`, `command_at`, `status`, `created_at`, `updated_at`) VALUES
-(1, 15, 1, '305.60', 1, '2016-01-25 15:55:36', 'finalized', '2016-01-25 15:55:36', '2016-01-25 15:55:36'),
-(2, 15, 4, '305.60', 1, '2016-01-25 16:07:15', 'finalized', '2016-01-25 16:07:15', '2016-01-25 16:07:15'),
-(3, 15, 3, '305.60', 1, '2016-01-26 15:14:57', 'finalized', '2016-01-26 15:14:57', '2016-01-26 15:14:57'),
-(4, 11, 3, '1239.67', 2, '2016-01-26 15:14:57', 'finalized', '2016-01-26 15:14:57', '2016-01-26 15:14:57'),
-(5, 6, 3, '1269.50', 2, '2016-01-26 15:14:57', 'finalized', '2016-01-26 15:14:57', '2016-01-26 15:14:57'),
-(6, 5, 1, '1823.54', 1, '2016-01-27 10:25:11', 'finalized', '2016-01-27 10:25:11', '2016-01-27 10:25:11'),
-(7, 9, 1, '975.95', 1, '2016-01-27 10:25:23', 'finalized', '2016-01-27 10:25:23', '2016-01-27 10:25:23'),
-(8, 11, 1, '1239.67', 1, '2016-01-27 10:25:33', 'finalized', '2016-01-27 10:25:33', '2016-01-27 10:25:33'),
-(9, 9, 1, '975.95', 1, '2016-01-27 10:26:54', 'finalized', '2016-01-27 10:26:54', '2016-01-27 10:26:54'),
-(10, 12, 1, '1611.38', 1, '2016-01-27 10:27:09', 'finalized', '2016-01-27 10:27:09', '2016-01-27 10:27:09'),
-(11, 7, 1, '375.73', 1, '2016-01-27 10:27:24', 'finalized', '2016-01-27 10:27:24', '2016-01-27 10:27:24'),
-(12, 12, 1, '1611.38', 1, '2016-01-27 10:27:36', 'finalized', '2016-01-27 10:27:36', '2016-01-27 10:27:36'),
-(13, 3, 1, '266.65', 1, '2016-01-27 10:27:48', 'finalized', '2016-01-27 10:27:48', '2016-01-27 10:27:48'),
-(14, 13, 1, '1264.40', 1, '2016-01-27 10:28:16', 'finalized', '2016-01-27 10:28:16', '2016-01-27 10:28:16'),
-(15, 2, 1, '23.85', 1, '2016-01-27 10:53:45', 'finalized', '2016-01-27 10:53:46', '2016-01-27 10:53:46'),
-(16, 3, 1, '266.65', 1, '2016-01-27 10:53:58', 'finalized', '2016-01-27 10:53:58', '2016-01-27 10:53:58'),
-(17, 14, 1, '376.63', 1, '2016-01-27 10:54:13', 'finalized', '2016-01-27 10:54:13', '2016-01-27 10:54:13'),
-(18, 17, 1, '125.00', 1, '2016-01-27 16:43:20', 'finalized', '2016-01-27 16:43:20', '2016-01-27 16:43:20');
+(18, 17, 1, '125.00', 1, '2016-01-27 16:43:20', 'finalized', '2016-01-27 16:43:20', '2016-01-27 16:43:20'),
+(19, 30, 4, '12.00', 2, '2016-01-29 18:37:17', 'finalized', '2016-01-29 18:37:17', '2016-01-29 18:37:17'),
+(20, 30, 1, '12.00', 3, '2016-01-30 13:02:26', 'finalized', '2016-01-30 13:02:26', '2016-01-30 13:02:26'),
+(21, 22, 1, '150.00', 1, '2016-01-30 13:02:26', 'finalized', '2016-01-30 13:02:26', '2016-01-30 13:02:26'),
+(22, 21, 1, '90.00', 1, '2016-01-30 13:02:26', 'finalized', '2016-01-30 13:02:26', '2016-01-30 13:02:26'),
+(23, 32, 1, '7.00', 4, '2016-01-30 13:04:10', 'finalized', '2016-01-30 13:04:10', '2016-01-30 13:04:10'),
+(24, 23, 1, '115.00', 1, '2016-01-30 13:04:10', 'finalized', '2016-01-30 13:04:10', '2016-01-30 13:04:10'),
+(25, 24, 1, '155.00', 1, '2016-01-30 13:04:10', 'finalized', '2016-01-30 13:04:10', '2016-01-30 13:04:10');
 
 -- --------------------------------------------------------
 
@@ -173,21 +163,6 @@ CREATE TABLE `pictures` (
 --
 
 INSERT INTO `pictures` (`id`, `product_id`, `title`, `uri`, `size`, `type`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Meagan Hintz DDS', 'BeXI7HH3mtlN_370x235.jpg', 0, 'png', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(2, 2, 'Mr. Demond Grimes', 'wMLD7XCnfhMZ_370x235.jpg', 0, 'png', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(3, 3, 'Hanna Zulauf III', 'LaONOUC0esNb_370x235.jpg', 0, 'png', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(4, 4, 'Elian Langosh', 'A4hDeoY6Ftkt_370x235.jpg', 0, 'png', '2016-01-25 15:52:46', '2016-01-25 15:52:46'),
-(5, 5, 'Candice Metz Sr.', 'MYilMwC9B2Tl_370x235.jpg', 0, 'png', '2016-01-25 15:52:46', '2016-01-25 15:52:46'),
-(6, 6, 'Buck Glover', 'vxnAMFMd5OoF_370x235.jpg', 0, 'png', '2016-01-25 15:52:46', '2016-01-25 15:52:46'),
-(7, 7, 'Prof. Avery Koch', 'IVgxeNZu0k1W_370x235.jpg', 0, 'png', '2016-01-25 15:52:46', '2016-01-25 15:52:46'),
-(8, 8, 'Miss Helen Turcotte DVM', 'bojhISUbqzYD_370x235.jpg', 0, 'png', '2016-01-25 15:52:48', '2016-01-25 15:52:48'),
-(9, 9, 'Grover Lindgren V', 'VqWXu3i2RoA8_370x235.jpg', 0, 'png', '2016-01-25 15:52:49', '2016-01-25 15:52:49'),
-(10, 10, 'Francisca Huels I', 'k4ZAay4luzmn_370x235.jpg', 0, 'png', '2016-01-25 15:52:49', '2016-01-25 15:52:49'),
-(11, 11, 'Prof. Eino King Jr.', 'RolrEluC8vPS_370x235.jpg', 0, 'png', '2016-01-25 15:52:50', '2016-01-25 15:52:50'),
-(12, 12, 'Prof. Kellen Zulauf I', 'BriIh3ge7Dh5_370x235.jpg', 0, 'png', '2016-01-25 15:52:50', '2016-01-25 15:52:50'),
-(13, 13, 'Ms. Mertie Feest', 'HFaHdPJSsMQz_370x235.jpg', 0, 'png', '2016-01-25 15:52:50', '2016-01-25 15:52:50'),
-(14, 14, 'Ms. Sydni Emmerich DVM', 's4jHdwd5EJCr_370x235.jpg', 0, 'png', '2016-01-25 15:52:51', '2016-01-25 15:52:51'),
-(15, 15, 'Prof. Heath Murphy DDS', 'j3DArScqhxEm_370x235.jpg', 0, 'png', '2016-01-25 15:52:51', '2016-01-25 15:52:51'),
 (17, 17, '', '0LqPupeamZuR.jpg', 16097, 'jpg', '2016-01-27 15:41:20', '2016-01-27 15:41:20'),
 (18, 18, '', 'ZpTvCeRyfGbt.jpg', 17936, 'jpg', '2016-01-27 15:43:47', '2016-01-27 15:43:47'),
 (19, 19, '', 'GPJ3VfifRpol.jpg', 32644, 'jpg', '2016-01-27 16:22:58', '2016-01-27 16:22:58'),
@@ -232,37 +207,22 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `name`, `slug`, `abstract`, `content`, `price`, `quantity`, `score`, `status`, `published_at`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Prof. Hassie Nolan', 'prof-hassie-nolan', 'Repellendus quidem facere exercitationem et et reprehenderit aut rem enim.', 'Ipsa quasi aut incidunt autem. Vel id facere eveniet sed ut eum. Veritatis a quia est doloribus quia. Numquam possimus nostrum inventore ipsa occaecati laboriosam quo. Quia deleniti voluptatem sit molestiae.', '366.58', 0, 0, 'opened', '2015-05-08 16:52:45', '2016-01-26 18:51:45', '2016-01-26 18:51:45'),
-(2, 2, 'Mr. Makenna Christiansen', 'mr-makenna-christiansen', 'Pariatur sunt ea non nisi ratione tempora neque qui.', 'Et voluptas inventore nesciunt eligendi. Consequatur officia omnis rerum delectus autem impedit voluptatem. Dolorum quis quas inventore quis quis. Corrupti fugiat in quaerat expedita et nulla.', '23.85', 4, 1, 'opened', '1999-09-24 16:52:45', '2016-01-27 10:53:45', '2016-01-27 10:53:45'),
-(3, 2, 'Mr. Enrique Hermiston IV', 'mr-enrique-hermiston-iv', 'Molestiae nihil earum et quibusdam ea vitae voluptate id explicabo aut.', 'At eos praesentium officia ut. Sequi nihil totam dolorem fugiat hic. Reprehenderit nobis rerum dignissimos ab explicabo est dolorem. Architecto dignissimos eaque aut non ut aut vero. Aut eos rem quia atque possimus. Magnam aspernatur qui nesciunt quia. Dolor ut tenetur facere rem quis voluptatibus dolorum.', '266.65', 6, 2, 'opened', '1978-06-11 16:52:45', '2016-01-27 10:53:58', '2016-01-27 10:53:58'),
-(4, 2, 'Mandy Jones PhD', 'mandy-jones-phd', 'Quam nisi dolorem doloremque non atque.', 'Itaque aliquid veritatis consequatur autem et quaerat. In similique sed dignissimos pariatur et sed perferendis. Asperiores at aspernatur eveniet sit. Quaerat laborum velit odit corrupti est in. Quibusdam culpa quae dolorem est.', '670.43', 8, 0, 'opened', '2009-04-11 16:52:45', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(5, 1, 'Koby Lynch', 'koby-lynch', 'Dolore odio nihil omnis ullam beatae perferendis vel dolor est ut alias molestiae earum.', 'Omnis dolorem porro nesciunt dolorem. Non nihil omnis quaerat labore. Dignissimos et nisi natus ullam dolor ipsam. Perferendis sunt reiciendis et itaque dolores nobis quis. Aut quibusdam dolorem neque sapiente.', '1823.54', 5, 1, 'opened', '2009-10-29 16:52:45', '2016-01-27 10:25:11', '2016-01-27 10:25:11'),
-(6, 1, 'William Kemmer', 'william-kemmer', 'Architecto mollitia sit et laudantium sed ratione cupiditate accusamus.', 'Dolor ratione sed sunt a ea. Consequatur nisi numquam consequatur voluptatibus temporibus doloribus officia ducimus. Soluta necessitatibus esse minus cum ducimus rerum quia. Itaque illum facere facere odit sit. Eum ullam tempora illo odio. Inventore exercitationem voluptatem modi debitis quidem iusto ea.', '1269.50', 6, 2, 'opened', '2000-08-13 16:52:45', '2016-01-27 11:45:58', '2016-01-27 11:45:58'),
-(7, 2, 'Breanna McLaughlin', 'breanna-mclaughlin', 'Sint autem voluptates voluptatem eos illum fugit quia.', 'Fuga nulla error a qui aut. Voluptate illo qui rerum sint incidunt debitis ipsam. Pariatur quaerat non iusto laboriosam. Mollitia ut amet fuga eius aut.', '375.73', 7, 1, 'opened', '1985-10-31 16:52:45', '2016-01-27 10:27:24', '2016-01-27 10:27:24'),
-(8, 2, 'Everardo Blick', 'everardo-blick', 'Fugit ipsa aspernatur pariatur dolorum laboriosam odit omnis aut a vel eius.', 'Nam eveniet mollitia rerum et enim ex illo fugiat. Ipsam error maiores sequi enim. Id neque omnis vero veritatis incidunt ea ut. Assumenda voluptatem accusantium laudantium soluta quidem illo esse. Voluptates et quasi consequatur sit.', '1220.76', 0, 0, 'opened', '2009-12-19 16:52:45', '2016-01-26 18:46:48', '2016-01-26 18:46:48'),
-(9, 1, 'Miss Ruby Macejkovic II', 'miss-ruby-macejkovic-ii', 'Vel omnis tempore dolorem tempore.', 'Et quia et temporibus quo aut in. Dolores totam aut recusandae omnis corrupti. Libero saepe exercitationem cum sequi qui. Velit non et ea fugiat omnis nemo. Ea cupiditate earum quia voluptate. Vel ut in delectus eveniet illo ut ad nostrum.', '975.95', 0, 2, 'opened', '2005-10-18 16:52:45', '2016-01-27 10:26:54', '2016-01-27 10:26:54'),
-(10, 1, 'Dr. Fidel Deckow III', 'dr-fidel-deckow-iii', '', '', '1317.45', 5, 0, 'opened', '2016-01-27 17:17:16', '2016-01-28 16:23:11', '2016-01-28 16:23:11'),
-(11, 1, 'Reyna Hirthe', 'reyna-hirthe', 'Repellat nulla repellendus quos et sint nihil eum quasi et debitis.', 'Quos qui qui est odit. Quod voluptate autem quia maxime reprehenderit. Expedita fugiat eos debitis doloremque. Ad aut qui non aspernatur numquam dicta. Ullam alias ratione ipsa. Omnis omnis magni ullam id sint.', '1239.67', 3, 3, 'opened', '2001-11-21 16:52:45', '2016-01-27 10:25:33', '2016-01-27 10:25:33'),
-(12, 1, 'Rhiannon Gutkowski I', 'rhiannon-gutkowski-i', 'Ipsum quia impedit quae rerum.', 'Voluptatem iste mollitia dolorem aut possimus impedit est. Ipsam quia dolor laborum odit iste et numquam. Eos perferendis deleniti dolor iste. Omnis molestias veritatis et sed. Ut ut tenetur natus officia. Provident eaque voluptate quo esse deserunt rerum. Praesentium aut sit consectetur sit. Natus unde eos omnis voluptas.', '1611.38', 0, 2, 'opened', '1989-11-21 16:52:45', '2016-01-27 10:27:36', '2016-01-27 10:27:36'),
-(13, 2, 'Prof. Edward Johnson Jr.', 'prof-edward-johnson-jr', 'Quis reprehenderit quia illo at soluta velit perspiciatis quo.', 'Debitis corrupti veniam dignissimos quasi eum dolorem. Corrupti odio est rerum beatae laudantium. Consequuntur vel ad molestias enim. Quia dolor reprehenderit sequi aut officia rerum. Laboriosam sed dicta maiores fugit nesciunt culpa. Blanditiis deserunt cupiditate quo et aliquid necessitatibus nihil.', '1264.40', 7, 1, 'opened', '1995-10-23 16:52:45', '2016-01-27 10:28:16', '2016-01-27 10:28:16'),
-(14, 1, 'Mr. Harold Haley', 'mr-harold-haley', 'Dicta dolores hic fugiat sed aut et eveniet aut voluptas rerum.', 'Cumque itaque autem et consectetur. Expedita quasi ab voluptas iste numquam eos sint. Aut consequatur error sed. Et ab suscipit id adipisci cum excepturi repudiandae pariatur.', '376.63', 9, 1, 'opened', '1972-12-15 16:52:45', '2016-01-28 11:22:13', '2016-01-28 11:22:13'),
-(15, 1, 'Alfonzo Fadel IV', 'alfonzo-fadel-iv', 'Eveniet placeat occaecati voluptatem eum eius.', 'Quia at aut laudantium beatae quia. Similique quia consectetur est illo voluptatem at.', '305.60', 0, 3, 'opened', '1983-10-26 16:52:45', '2016-01-26 15:14:57', '2016-01-26 15:14:57'),
-(17, 2, 'ylo Ren', 'kylo-ren', 'Repellendus quidem facere exercitationem et et reprehenderit aut rem enim.', 'Ipsa quasi aut incidunt autem. Vel id facere eveniet sed ut eum. Veritatis a quia est doloribus quia. Numquam possimus nostrum inventore ipsa occaecati laboriosam quo. Quia deleniti voluptatem sit molestiae.', '125.00', 14, 1, 'opened', '2016-01-27 16:41:20', '2016-01-29 14:23:11', '2016-01-28 15:11:51'),
+(17, 2, 'kylo ren', 'kylo-ren', 'Repellendus quidem facere exercitationem et et reprehenderit aut rem enim.', 'Ipsa quasi aut incidunt autem. Vel id facere eveniet sed ut eum. Veritatis a quia est doloribus quia. Numquam possimus nostrum inventore ipsa occaecati laboriosam quo. Quia deleniti voluptatem sit molestiae.', '125.00', 13, 1, 'opened', '2016-01-27 16:41:20', '2016-01-29 19:34:21', '2016-01-29 19:34:21'),
 (18, 2, 'dark vador', 'dark-vador', 'Pariatur sunt ea non nisi ratione tempora neque qui.', 'Et voluptas inventore nesciunt eligendi. Consequatur officia omnis rerum delectus autem impedit voluptatem. Dolorum quis quas inventore quis quis. Corrupti fugiat in quaerat expedita et nulla.', '185.00', 11, 0, 'opened', '2016-01-06 16:43:47', '2016-01-29 14:23:15', '2016-01-27 15:43:47'),
-(19, 2, 'stormtrooper', 'stormtrooper', 'Molestiae nihil earum et quibusdam ea vitae voluptate id explicabo aut.', 'At eos praesentium officia ut. Sequi nihil totam dolorem fugiat hic. Reprehenderit nobis rerum dignissimos ab explicabo est dolorem. Architecto dignissimos eaque aut non ut aut vero. Aut eos rem quia atque possimus. Magnam aspernatur qui nesciunt quia. Dolor ut tenetur facere rem quis voluptatibus dolorum.', '110.00', 22, 0, 'opened', '2014-06-11 17:22:58', '2016-01-29 14:23:18', '2016-01-27 16:22:58'),
+(19, 2, 'Stormtrooper', 'stormtrooper', '', '', '110.00', 22, 0, 'opened', '2016-01-30 13:57:37', '2016-01-30 12:57:37', '2016-01-30 12:57:37'),
 (20, 2, 'boba fett', 'boba-fett', 'Quam nisi dolorem doloremque non atque.', 'Itaque aliquid veritatis consequatur autem et quaerat. In similique sed dignissimos pariatur et sed perferendis. Asperiores at aspernatur eveniet sit. Quaerat laborum velit odit corrupti est in. Quibusdam culpa quae dolorem est.', '145.00', 14, 0, 'opened', '2012-06-07 17:25:10', '2016-01-29 14:23:21', '2016-01-27 16:25:10'),
-(21, 2, 'pilote X wing', 'pilote-x-wing', 'Dolore odio nihil omnis ullam beatae perferendis vel dolor est ut alias molestiae earum.', 'Omnis dolorem porro nesciunt dolorem. Non nihil omnis quaerat labore. Dignissimos et nisi natus ullam dolor ipsam. Perferendis sunt reiciendis et itaque dolores nobis quis. Aut quibusdam dolorem neque sapiente.', '90.00', 18, 0, 'opened', '2014-04-01 17:27:33', '2016-01-29 14:23:25', '2016-01-27 16:27:33'),
-(22, 2, 'pilote imperial', 'pilote-imperial', 'Architecto mollitia sit et laudantium sed ratione cupiditate accusamus.', 'Dolor ratione sed sunt a ea. Consequatur nisi numquam consequatur voluptatibus temporibus doloribus officia ducimus. Soluta necessitatibus esse minus cum ducimus rerum quia. Itaque illum facere facere odit sit. Eum ullam tempora illo odio. Inventore exercitationem voluptatem modi debitis quidem iusto ea.', '150.00', 9, 0, 'opened', '2016-01-07 17:30:23', '2016-01-29 14:23:27', '2016-01-27 16:30:23'),
-(23, 2, 'pilote tr-tt', 'pilote-tr-tt', 'Sint autem voluptates voluptatem eos illum fugit quia.', 'Fuga nulla error a qui aut. Voluptate illo qui rerum sint incidunt debitis ipsam. Pariatur quaerat non iusto laboriosam. Mollitia ut amet fuga eius aut.', '115.00', 16, 0, 'opened', '2009-11-29 17:36:33', '2016-01-29 14:23:30', '2016-01-27 16:36:33'),
-(24, 2, 'flametrooper', 'flametrooper', 'Fugit ipsa aspernatur pariatur dolorum laboriosam odit omnis aut a vel eius.', 'Nam eveniet mollitia rerum et enim ex illo fugiat. Ipsam error maiores sequi enim. Id neque omnis vero veritatis incidunt ea ut. Assumenda voluptatem accusantium laudantium soluta quidem illo esse. Voluptates et quasi consequatur sit.', '155.00', 21, 0, 'opened', '2016-01-16 17:40:59', '2016-01-29 14:23:33', '2016-01-27 16:40:59'),
-(25, 2, 'jango fett', 'jango-fett', 'Vel omnis tempore dolorem tempore.', 'Et quia et temporibus quo aut in. Dolores totam aut recusandae omnis corrupti. Libero saepe exercitationem cum sequi qui. Velit non et ea fugiat omnis nemo. Ea cupiditate earum quia voluptate. Vel ut in delectus eveniet illo ut ad nostrum.', '90.00', 12, 0, 'opened', '2012-05-22 17:56:58', '2016-01-29 14:23:36', '2016-01-27 16:56:58'),
-(26, 1, 'boucles d''oreilles', 'boucles-doreilles', 'Pariatur sunt ea non nisi ratione tempora neque qui.', 'Quos qui qui est odit. Quod voluptate autem quia maxime reprehenderit. Expedita fugiat eos debitis doloremque. Ad aut qui non aspernatur numquam dicta. Ullam alias ratione ipsa. Omnis omnis magni ullam id sint.', '25.00', 35, 0, 'opened', '2016-01-23 17:26:51', '2016-01-29 14:23:39', '2016-01-28 16:26:51'),
-(27, 1, 'bonbon sabre', 'bonbon-sabre', 'Architecto mollitia sit et laudantium sed ratione cupiditate accusamus.', 'Voluptatem iste mollitia dolorem aut possimus impedit est. Ipsam quia dolor laborum odit iste et numquam. Eos perferendis deleniti dolor iste. Omnis molestias veritatis et sed. Ut ut tenetur natus officia. Provident eaque voluptate quo esse deserunt rerum. Praesentium aut sit consectetur sit. Natus unde eos omnis voluptas.', '2.00', 50, 0, 'opened', '2016-01-28 17:27:32', '2016-01-29 14:23:42', '2016-01-28 16:27:32'),
-(28, 1, 'sabre dark vador', 'sabre-dark-vador', 'Fugit ipsa aspernatur pariatur dolorum laboriosam odit omnis aut a vel eius.', 'Debitis corrupti veniam dignissimos quasi eum dolorem. Corrupti odio est rerum beatae laudantium. Consequuntur vel ad molestias enim. Quia dolor reprehenderit sequi aut officia rerum. Laboriosam sed dicta maiores fugit nesciunt culpa. Blanditiis deserunt cupiditate quo et aliquid necessitatibus nihil.', '65.00', 18, 0, 'opened', '2016-01-21 17:28:27', '2016-01-29 14:23:45', '2016-01-28 16:28:27'),
-(29, 1, 'sabre lampe', 'sabre-lampe', 'Dicta dolores hic fugiat sed aut et eveniet aut voluptas rerum.', 'Cumque itaque autem et consectetur. Expedita quasi ab voluptas iste numquam eos sint. Aut consequatur error sed. Et ab suscipit id adipisci cum excepturi repudiandae pariatur.', '35.00', 27, 0, 'opened', '2016-01-11 17:29:32', '2016-01-29 14:23:48', '2016-01-28 16:29:32'),
-(30, 1, 'mug sabre', 'mug-sabre', 'Quam nisi dolorem doloremque non atque.', 'Quia at aut laudantium beatae quia. Similique quia consectetur est illo voluptatem at.', '12.00', 37, 0, 'opened', '2016-07-12 17:30:12', '2016-01-29 14:23:51', '2016-01-28 16:30:12'),
-(31, 1, 'sabre obi-wan', 'sabre-obi-wan', 'Quis reprehenderit quia illo at soluta velit perspiciatis quo.', 'Ipsa quasi aut incidunt autem. Vel id facere eveniet sed ut eum. Veritatis a quia est doloribus quia. Numquam possimus nostrum inventore ipsa occaecati laboriosam quo. Quia deleniti voluptatem sit molestiae.', '40.00', 12, 0, 'opened', '2016-01-26 17:30:53', '2016-01-29 14:23:54', '2016-01-28 16:30:53'),
-(32, 1, 'stylo sabre', 'stylo-sabre', 'Repellat nulla repellendus quos et sint nihil eum quasi et debitis.', '', '7.00', 78, 0, 'opened', '2015-11-17 17:31:59', '2016-01-29 14:23:06', '2016-01-28 16:31:59');
+(21, 2, 'Pilote X wing', 'pilote-x-wing', '', '', '90.00', 17, 1, 'opened', '2016-01-30 13:57:06', '2016-01-30 13:02:26', '2016-01-30 13:02:26'),
+(22, 2, 'Pilote imperial', 'pilote-imperial', '', '', '150.00', 8, 1, 'opened', '2016-01-30 13:59:25', '2016-01-30 13:02:26', '2016-01-30 13:02:26'),
+(23, 2, 'Pilote tr-tt', 'pilote-tr-tt', '', '', '115.00', 15, 1, 'opened', '2016-01-30 13:56:11', '2016-01-30 13:04:10', '2016-01-30 13:04:10'),
+(24, 2, 'flametrooper', 'flametrooper', 'Fugit ipsa aspernatur pariatur dolorum laboriosam odit omnis aut a vel eius.', 'Nam eveniet mollitia rerum et enim ex illo fugiat. Ipsam error maiores sequi enim. Id neque omnis vero veritatis incidunt ea ut. Assumenda voluptatem accusantium laudantium soluta quidem illo esse. Voluptates et quasi consequatur sit.', '155.00', 20, 1, 'opened', '2016-01-16 17:40:59', '2016-01-30 13:04:10', '2016-01-30 13:04:10'),
+(25, 2, 'Jango fett', 'jango-fett', '', '', '90.00', 12, 0, 'opened', '2016-01-30 13:56:52', '2016-01-30 12:56:52', '2016-01-30 12:56:52'),
+(26, 1, 'Boucles d''oreilles', 'boucles-doreilles', '', '', '25.00', 35, 0, 'opened', '2016-01-30 14:00:27', '2016-01-30 13:00:27', '2016-01-30 13:00:27'),
+(27, 1, 'Bonbon sabre', 'bonbon-sabre', '', '', '2.00', 50, 0, 'opened', '2016-01-30 14:00:46', '2016-01-30 13:00:46', '2016-01-30 13:00:46'),
+(28, 1, 'Sabre dark vador', 'sabre-dark-vador', '', '', '65.00', 18, 0, 'opened', '2016-01-30 14:00:05', '2016-01-30 13:00:05', '2016-01-30 13:00:05'),
+(29, 1, 'Sabre lampe', 'sabre-lampe', '', '', '35.00', 27, 0, 'opened', '2016-01-30 13:59:50', '2016-01-30 12:59:50', '2016-01-30 12:59:50'),
+(30, 1, 'mug sabre', 'mug-sabre', 'Quam nisi dolorem doloremque non atque.', 'Quia at aut laudantium beatae quia. Similique quia consectetur est illo voluptatem at.', '12.00', 29, 5, 'opened', '2016-07-12 17:30:12', '2016-01-30 13:30:13', '2016-01-30 13:30:13'),
+(31, 1, 'Sabre obi-wan', 'sabre-obi-wan', '', '', '40.00', 12, 0, 'opened', '2016-01-30 13:55:46', '2016-01-30 12:55:46', '2016-01-30 12:55:46'),
+(32, 1, 'Stylo sabre', 'stylo-sabre', '', '', '7.00', 74, 4, 'opened', '2016-01-30 13:58:59', '2016-01-30 13:04:10', '2016-01-30 13:04:10');
 
 -- --------------------------------------------------------
 
@@ -280,138 +240,33 @@ CREATE TABLE `product_tag` (
 --
 
 INSERT INTO `product_tag` (`product_id`, `tag_id`) VALUES
-(1, 9),
-(1, 15),
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5),
-(2, 6),
-(2, 7),
-(2, 8),
-(2, 9),
-(2, 11),
-(2, 12),
-(2, 13),
-(2, 14),
-(2, 15),
-(3, 2),
-(3, 4),
-(3, 5),
-(3, 7),
-(3, 12),
-(3, 13),
-(3, 14),
-(3, 15),
-(4, 1),
-(4, 4),
-(4, 5),
-(4, 9),
-(4, 10),
-(4, 11),
-(5, 3),
-(5, 7),
-(5, 9),
-(6, 1),
-(6, 2),
-(6, 5),
-(6, 7),
-(6, 12),
-(6, 15),
-(7, 2),
-(7, 7),
-(7, 10),
-(7, 12),
-(8, 1),
-(8, 4),
-(8, 5),
-(8, 6),
-(8, 7),
-(8, 8),
-(8, 9),
-(8, 11),
-(8, 12),
-(8, 13),
-(8, 14),
-(8, 15),
-(9, 1),
-(9, 2),
-(9, 3),
-(9, 4),
-(9, 6),
-(9, 9),
-(9, 12),
-(9, 13),
-(10, 1),
-(10, 3),
-(10, 8),
-(11, 1),
-(11, 2),
-(11, 3),
-(11, 4),
-(11, 5),
-(11, 6),
-(11, 7),
-(11, 8),
-(11, 9),
-(11, 12),
-(11, 13),
-(11, 14),
-(11, 15),
-(12, 2),
-(12, 4),
-(12, 5),
-(12, 6),
-(12, 9),
-(12, 11),
-(12, 12),
-(13, 3),
-(13, 4),
-(13, 6),
-(13, 11),
-(13, 14),
-(14, 4),
-(14, 5),
-(14, 10),
-(14, 11),
-(14, 12),
-(15, 4),
-(15, 5),
-(15, 6),
-(15, 8),
-(15, 11),
-(15, 14),
 (17, 1),
 (18, 1),
-(18, 4),
 (18, 5),
 (19, 2),
-(19, 4),
-(19, 7),
+(19, 6),
 (20, 1),
-(20, 2),
-(21, 9),
-(21, 11),
-(21, 12),
+(21, 2),
 (22, 2),
+(22, 3),
+(23, 1),
+(23, 2),
 (24, 3),
-(24, 10),
-(24, 11),
-(26, 2),
-(26, 6),
-(27, 11),
-(27, 12),
+(25, 1),
+(25, 6),
+(26, 4),
+(26, 5),
+(27, 4),
+(27, 5),
 (28, 2),
-(28, 6),
-(29, 8),
-(29, 12),
-(29, 14),
+(28, 3),
+(29, 4),
+(29, 6),
 (30, 1),
 (30, 3),
 (31, 4),
-(32, 9),
-(32, 10);
+(31, 6),
+(32, 4);
 
 -- --------------------------------------------------------
 
@@ -431,21 +286,12 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'aut', '2016-01-25 15:52:44', '2016-01-25 15:52:44'),
-(2, 'minus', '2016-01-25 15:52:44', '2016-01-25 15:52:44'),
-(3, 'sit', '2016-01-25 15:52:44', '2016-01-25 15:52:44'),
-(4, 'dolore', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(5, 'optio', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(6, 'ut', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(7, 'est', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(8, 'dolorum', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(9, 'et', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(10, 'eius', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(11, 'sint', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(12, 'quisquam', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(13, 'quos', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(14, 'quos', '2016-01-25 15:52:45', '2016-01-25 15:52:45'),
-(15, 'autem', '2016-01-25 15:52:45', '2016-01-25 15:52:45');
+(1, 'saga', '2016-01-30 12:43:59', '2016-01-25 15:52:44'),
+(2, 'empire', '2016-01-30 12:43:59', '2016-01-25 15:52:44'),
+(3, 'sith', '2016-01-30 12:44:02', '2016-01-25 15:52:44'),
+(4, 'jedi', '2016-01-30 12:50:48', '2016-01-25 15:52:44'),
+(5, 'naboo', '2016-01-30 12:43:24', '2016-01-25 15:52:45'),
+(6, 'force', '2016-01-30 12:52:13', '2016-01-25 15:52:44');
 
 -- --------------------------------------------------------
 
@@ -469,11 +315,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'nico', 'nico@nico.fr', '$2y$10$xMpuXXuTeMI9HiqO2mWOVuctFPiVQ57MC6Nyl5fonT4cccK4nHZrW', 'administrator', 'NERFid8hp6Zop2IHOgNN6odgthdaruPonLSGCsWRFLxljTRPmaIxk3N84S9Z', '2016-01-28 16:16:02', '2016-01-28 16:16:02'),
-(2, 'tony', 'tony@tony.fr', '$2y$10$nLOsmQwnwXfemW6NIOkUseQ2Ora9kEUj3ntH0f1k7NiiT6.TRb7Oi', 'editor', 'W5qOHyImUS5QX42QoJpSiEP24Ns1sT9JBJTzQpJDLw3iLXUDz0RYhrbeJjDD', '2016-01-25 16:08:41', '2016-01-25 16:08:41'),
-(3, 'antoine', 'antoine@antoine.fr', '$2y$10$rfWDbBi64HemxjWS.Ij2mupL1/CeeBYxwikFgiMsolN.qbAAo.6rC', 'visitor', 'byEvT8eBeikF09bCAGDbct4lvBWDSSJeY3Wsn6tSuMonE1wTNL3SNnEBeO9S', '2016-01-26 15:56:45', '2016-01-26 15:56:45'),
-(4, 'yini', 'yini@yini.fr', '$2y$10$eC5.XoUQ/iCLlP9oxg021uQBBz.F8OefZZ/uHEuSPER5fvmyul8cG', 'visitor', 'QakUbc6PF6U1Heg4bsnhckWkbLTcibnl40vvtgjhoIUB3r0yyZipJjMpOgKn', '2016-01-25 16:07:18', '2016-01-25 16:07:18'),
-(5, 'jb', 'jb@jb.fr', '$2y$10$BONoMMspUBPjgnG5el65VOpE9g5EydCeM6NJ17Fi/8u.fYbDTVGBa', 'visitor', 'TpRdiAQk4lTuzwypUcMyuMcFXYG1YFFDXIfekWXjRTzbqPoLHF1q7SBChcr2', '2016-01-26 16:33:38', '2016-01-26 16:33:38');
+(1, 'nico', 'nico@nico.fr', '$2y$10$xMpuXXuTeMI9HiqO2mWOVuctFPiVQ57MC6Nyl5fonT4cccK4nHZrW', 'administrator', '8xg8nLz832UZCjXfqUMA0Y3V1BZxVeG59D7mv2J4RBdkq5EH2kN2ZHimyyuh', '2016-01-30 13:07:09', '2016-01-30 13:07:09'),
+(2, 'tony', 'tony@tony.fr', '$2y$10$nLOsmQwnwXfemW6NIOkUseQ2Ora9kEUj3ntH0f1k7NiiT6.TRb7Oi', 'editor', 'MQ7OjwNtWLuzCDfzoJoABwkT84KPs9UhTUwoiczDrOKU9ihlf37uStvU8mgX', '2016-01-29 18:19:32', '2016-01-29 18:19:32'),
+(3, 'antoine', 'antoine@antoine.fr', '$2y$10$rfWDbBi64HemxjWS.Ij2mupL1/CeeBYxwikFgiMsolN.qbAAo.6rC', 'visitor', 'y0qx7ozfYkyv82Bb882a7KtOPItTcjHAATyHUFMkUusvDs3hFDUq8jRelvqZ', '2016-01-29 18:19:09', '2016-01-29 18:19:09'),
+(4, 'yini', 'yini@yini.fr', '$2y$10$eC5.XoUQ/iCLlP9oxg021uQBBz.F8OefZZ/uHEuSPER5fvmyul8cG', 'visitor', 'MBEj0NDBYZJ7GXTwa5orwYavpLQCkuxnah8kUnU4ebWt1Zbs5kMVK6by1N6O', '2016-01-29 18:37:32', '2016-01-29 18:37:32'),
+(5, 'jb', 'jb@jb.fr', '$2y$10$BONoMMspUBPjgnG5el65VOpE9g5EydCeM6NJ17Fi/8u.fYbDTVGBa', 'visitor', 'LDECxlnp57CKrNGVoc0P9gKsc1hWQR57XDEDwWE4X3Aag8qINjdyLuNBqIF0', '2016-01-29 19:00:42', '2016-01-29 19:00:42');
 
 --
 -- Index pour les tables exportées
@@ -559,7 +405,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT pour la table `histories`
 --
 ALTER TABLE `histories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT pour la table `pictures`
 --
