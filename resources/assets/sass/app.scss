@@ -139,7 +139,8 @@ li {
 
 
 #tri,
-#endpage {
+#endpage,
+#empty {
   background-color: #fff;
   text-align: left;
   padding: 20px;
@@ -207,3 +208,6 @@ div.form-text {
 #delete {
   padding: 4px 4px;
 }
+ .error {
+   color: #f00;
+ }

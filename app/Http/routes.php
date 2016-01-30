@@ -66,12 +66,6 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('product/history','ProductController@showHistory');// a mettre avant sinon methode REST appliquée
         Route::resource('product', 'ProductController');
         Route::get('product/status/{id}', 'ProductController@changeStatus');
-//        Route::post('command')
-
-//        Route::get('product/test', function(){
-//            return 'hello world';
-//        });
-
     });
 
     Route::group(['middleware' => ['auth']], function(){
@@ -80,18 +74,4 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('prod/finalize', 'FrontController@storeCustomer');
 
     });
-
-
-//    Route::get('test',['middleware' => ['admin'], function(){
-//        return 'hello world';
-//    }]);
-
-
-    // etudier ce qu'il ya ci dessous (fonction de closure au lieu de storeContact ci-dessous)
-//Route::post('storeContact', function(REQUEST $request){
-//    //var_dump($_POST);
-//    //dd('ici contact post');
-//    //dd($request);
-//    dd($request->all()); // identique à $_POST
-//});
 });

@@ -26,7 +26,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::with('tags','category','picture')->orderBy('published_at')->paginate(4);
+        $products = Product::with('tags','category','picture')->orderBy('published_at')->paginate(8);
         return view('admin.product', compact('products'));
 //        var_dump('test');
     }
@@ -45,15 +45,8 @@ class ProductController extends Controller
 
     public function showHistory()
     {
-//        $histories = History::orderBy('command_at')->get();
         $histories = History::with('customer','product')->orderBy('command_at')->paginate(6);
-//        $user = $histories->user();
-//        $total = [];
-//        foreach ($histories as $history)
-//        {
-//            $total[] += $history->quantity * $history->price;
-//        }
-        return view('admin.history', compact('histories'));//, compact('histories','products','customers'));
+        return view('admin.history', compact('histories'));
     }
 
 
@@ -100,7 +93,6 @@ class ProductController extends Controller
             $product->tags()->attach($tags);
 
         # phpini limite le nombre d'octets pour une image téléchargée
-//        dd($request->file('thumbnail'));
         if (!is_null($request->file('thumbnail'))) {
 
             $im = $request->file('thumbnail');
@@ -122,12 +114,10 @@ class ProductController extends Controller
                 'product_id' => $product->id
             ]);
         }
-//    dd($request->input('status'));
         return back()->with([
             'alert' => 'done',
             'message' => 'produit créé',
         ]);
-//        return redirect('product')->with(['message' => 'succes add'])
     }
 
     /**
@@ -172,18 +162,6 @@ class ProductController extends Controller
      */
     public function update(Requests\ProductRequest $request, $id)
     {
-//        $this->validate($request, [
-//            'name'          => 'required|string|max:255',
-//            'slug'          => 'string',
-//            'category_id'   => 'integer',
-//            'price'         => 'required|numeric',
-//            'quantity'      => 'integer',
-//            'status'        => 'in:opened,closed',
-//            'published_at'  => 'required|date_format:Y-m-j',
-//            'thumbnail'     => 'image|max:3000', // en byte (octet) donc 3Mo
-//            'delete_img'    => 'in:1'
-//        ]);
-
         $tags = $request->input('tags');
         $product = Product::find($id);
 
@@ -277,6 +255,5 @@ class ProductController extends Controller
             'message' => 'You have no acces',
             'alert' => 'fail'
         ]);
-
     }
 }

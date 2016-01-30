@@ -29,13 +29,6 @@ class FrontController extends Controller
     public function __construct()
     {
 
-    //    View::composer('front.cart', function($view) use($request){
-    //        $panier = $request->session()->all();
-    //        $this->panier=$panier;
-    //        $view->with(compact('panier'));
-    //    });
-
-
         View::composer('partials.nav', function($view){
 
     //        $categories = Category::lists('title', 'id'); // mieux que Category::all() mais ! que 2 arguments;
@@ -267,7 +260,7 @@ class FrontController extends Controller
         $stock_quantity = $product_quantity - $quantity;
 
         /*
-         * Gestion des stocks
+         * Gestion des Dtocks
          */
         if($stock_quantity >= 0)
         {
@@ -279,16 +272,12 @@ class FrontController extends Controller
                     $panier = array_add($panier, $product_id, $quantity);
                     $request->session()->put('panier', $panier);
                     session(['stock.'.$product_id => $product_quantity]);
-//                $stock_quantity = $product_quantity - $quantity;
                 }else{
                     $quantity_init = session('panier.'.$product_id);
                     $quantity_final = $quantity_init + $quantity;
 //                dd($quantity_final);
                     $request->session()->forget('panier.'.$product_id);
                     $request->session()->put('panier.'.$product_id, $quantity_final);
-//                $request->session()->forget('stock.'.$product_id);
-//                $request->session()->put('stock.'.$product_id, $quantity_final);
-//                $stock_quantity = $product_quantity - $quantity;
                 }
                 $product->update(['quantity' => $stock_quantity]);
             }else{
@@ -399,21 +388,13 @@ class FrontController extends Controller
         $panier = session('panier');
         $user = Auth::user(); // user authentifié par le login
         $user_id = $user->id;
-//        dd($user);
+//        dd($user_id);
 
-//        $customer_id = $user->customer->id;
-//        dd($customer_id);
-//        $data = $user->customer()->get();
-//        $data = $user->customer()->firstOrFail();
-//        dd($data);
 
         try{
             $customer = $user->customer()->firstOrFail();
 //            dd($customer);
             //        $customer = $data[0]; // $data est une collection !?
-//        $customer_id = $customer->id;
-//        dd($customer->id);
-
 
             if(!is_null($panier)){
                 foreach($panier as $product_id => $quantity)
@@ -461,13 +442,6 @@ class FrontController extends Controller
 
     public function storeCustomer(Request $request)
     {
-//        $this->validate($request, [
-//            'user_id'    => 'integer',
-//            'address'         => 'required|string|max:255',
-//            'number_card'      => 'required|numeric',
-//        ]);
-
-
 
         $request->all();
         $validator = Validator::make($request->all(),[

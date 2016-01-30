@@ -61,6 +61,8 @@
              </form>
         </div>
     @else
-        <p>Sorry no command</p>
+        <div id="empty">
+            <p>Sorry no command</p>
+        </div>
     @endif
 @stop
