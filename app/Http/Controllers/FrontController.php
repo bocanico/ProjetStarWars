@@ -260,7 +260,7 @@ class FrontController extends Controller
         $stock_quantity = $product_quantity - $quantity;
 
         /*
-         * Gestion des Dtocks
+         * Gestion des Stocks
          */
         if($stock_quantity >= 0)
         {
